@@ -26,16 +26,20 @@ fn App() -> Element {
 }
 
 fn Home() -> Element {
-      let extract_text = |values: &[(String, FormValue)], name: &str| -> String {
+      fn extract_text<I>(values: I, name: &str) -> String
+      where
+      I: IntoIterator<Item = (String, FormValue)>,
+      {
             values
-            .iter()
+            .into_iter()
             .find(|(key, _)| key == name)
             .and_then(|(_, val)| match val {
-                  FormValue::Text(s) => Some(s.clone()),
+                  FormValue::Text(s) => Some(s),
                   _ => None,
             })
-            .unwrap_or_default() // unwrap_or_default() WILL RETURN THE DEFAULT TYPE IF VALUE DOESN'T EXIST
-      };
+            .unwrap_or_default()
+      }
+
 
       rsx!(
       h1 { "My first form" }
@@ -43,10 +47,10 @@ fn Home() -> Element {
             onsubmit: move |evt| {
                   evt.prevent_default(); // THIS LINE PREVENTS PAGE RELOAD
                   async move {
-                        let values_vec: Vec<(String, FormValue)> = evt.values().into_iter().collect();
                         
-                        let username = extract_text(&values_vec, "username");
-                        let password = extract_text(&values_vec, "password");
+                        let username = extract_text(evt.values(), "username");
+                        let password = extract_text(evt.values(), "password");
+
                         
                         web_sys::console::log_1(&format!("Attempt login with username={}, password={}", username, password).into());
                         
