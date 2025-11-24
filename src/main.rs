@@ -3,6 +3,7 @@
 use dioxus::prelude::*;
 use dioxus_router::*;
 use serde::{Deserialize, Serialize};
+use dioxus::events::FormValue;
 
 
 fn main() {
@@ -23,9 +24,6 @@ fn App() -> Element {
             Router::<Route> { }
       )
 }
-
-
-use dioxus::events::FormValue;
 
 fn Home() -> Element {
       let extract_text = |values: &[(String, FormValue)], name: &str| -> String {
