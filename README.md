@@ -94,16 +94,6 @@ This example covers:
 
 ---
 
-## Future Improvements
-
-- Replace console logs with UI feedback  
-- Add session and authentication management  
-- Secure password handling and storage  
-- Add form validation  
-- Enhance styling via `assets/style.css`
-
----
-
 Made with ❤️ using Rust and Dioxus.
 
 ---
