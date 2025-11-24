@@ -55,15 +55,6 @@ This example covers:
 
 ---
 
-## Serialization & Deserialization
-
-- Converts Rust types like `LoginForm` to/from formats (usually JSON) for network transport.  
-- "Serialization" means converting data to a sequential, transferable format.  
-- "Deserialization" means reconstructing the original types from that format.  
-- Enables safe and consistent client-server data exchange with compile-time guarantees.
-
----
-
 ## Common Questions:
 
 - *Why use uncontrolled components?*  
