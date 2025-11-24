@@ -1,4 +1,4 @@
-/* Container to center content and add padding */
+/* CENTERING CONTAINER AND PADDING */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -7,7 +7,7 @@ body {
   justify-content: center;
 }
 
-/* Form wrapper with max width and neat box */
+/* FORM WRAPPER */
 form {
   background: white;
   padding: 20px 30px;
@@ -17,14 +17,14 @@ form {
   max-width: 400px;
 }
 
-/* Form header */
+/* FORM HEADER */
 h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Labels are blocks and separated */
+/* LABELS */
 label {
   display: block;
   margin-bottom: 8px;
@@ -33,7 +33,7 @@ label {
   margin-top: 15px;
 }
 
-/* Inputs styling */
+/* INPUTS STYLING */
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -45,19 +45,19 @@ input[type="password"] {
   transition: border-color 0.3s ease;
 }
 
-/* Inputs focus highlight */
+/* INPUTS FOCUS HIGHLIGHT */
 input[type="text"]:focus,
 input[type="password"]:focus {
   border-color: #0078d4;
   outline: none;
 }
 
-/* Spacing */
+/* SPACING */
 br {
   margin-bottom: 15px;
 }
 
-/* Submit button styling */
+/* SUBMIT BUTTON STYLING */
 button[type="submit"] {
   width: 100%;
   padding: 12px;

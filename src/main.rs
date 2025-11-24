@@ -5,6 +5,8 @@ use dioxus_router::*;
 use serde::{Deserialize, Serialize};
 use dioxus::events::FormValue;
 
+static CSS: Asset = asset!("/assets/style.css");
+
 
 fn main() {
     dioxus::launch(App);
@@ -15,8 +17,6 @@ enum Route {
       #[route("/")]
       Home,
 }
-
-static CSS: Asset = asset!("/assets/style.css");
 
 fn App() -> Element {
       rsx!(
@@ -34,14 +34,14 @@ fn Home() -> Element {
                   FormValue::Text(s) => Some(s.clone()),
                   _ => None,
             })
-            .unwrap_or_default()
+            .unwrap_or_default() // unwrap_or_default() WILL RETURN THE DEFAULT TYPE IF VALUE DOESN'T EXIST
       };
 
       rsx!(
       h1 { "My first form" }
       form {
             onsubmit: move |evt| {
-                  evt.prevent_default(); // Added this line to prevent page reload
+                  evt.prevent_default(); // THIS LINE PREVENTS PAGE RELOAD
                   async move {
                         let values_vec: Vec<(String, FormValue)> = evt.values().into_iter().collect();
                         
