@@ -64,9 +64,7 @@ This example covers:
 
 ---
 
-## Interview Preparation
-
-**Common Questions:**
+## Common Questions:
 
 - *Why use uncontrolled components?*  
   > They efficiently handle simple form input without extra re-renders or memory overhead.
